@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 //            2. 안드로이드 기본 전화앱으로 이동
 
 //            2.1  어느 번호에? => Uri로 저장
-            val myUri = Uri.parse("tel:01051123237") // 띄어쓰기 끼어있으면 앱이 죽는다.
+            val myUri = Uri.parse("tel:${ inputPhoneNum }") // 띄어쓰기 끼어있으면 앱이 죽는다.
 
 //            2.2 Uri + DIAL => Intent로 화면 이동
             val myIntent = Intent( Intent.ACTION_DIAL,  myUri )
