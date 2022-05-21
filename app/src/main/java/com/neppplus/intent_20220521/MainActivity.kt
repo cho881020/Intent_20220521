@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
 
 //            2. 메세지를 "들고" ViewMessage 화면으로 이동
             val myIntent = Intent( this, ViewMessageActivity::class.java )
+
+//            myIntent에, 메세지를 첨부
+            myIntent.putExtra("msg", inputMessage)
+
             startActivity(myIntent)
 
         }
