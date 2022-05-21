@@ -35,5 +35,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        btnEditNickname.setOnClickListener {
+
+            val myIntent = Intent( this, EditNicknameActivity::class.java )
+
+            startActivityForResult( myIntent, 1000 )
+
+        }
+
     }
 }
