@@ -48,4 +48,31 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+//        다른화면에서 결과를 받아서 돌아오면, 종류와 무관하게 무조건 실행되는 코드 영역 (함수)
+
+//        닉네임을 받으러 다녀온게 맞는지? => 대처방안만 코딩.
+
+        if ( requestCode == REQ_CODE_NICKNAME ) {
+
+//            확인 버튼을 누른게 맞는지?
+
+            if (resultCode == RESULT_OK) {
+
+//                닉네임변경 OK, 확인도 OK => 첨부된 닉네임 추출 > UI에 반영.
+
+                val newNickname = data?.getStringExtra("nick")
+                txtNickname.text = newNickname
+
+            }
+
+
+        }
+
+
+    }
+
 }
