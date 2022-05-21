@@ -1,6 +1,7 @@
 package com.neppplus.intent_20220521
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -44,6 +45,23 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent( this, EditNicknameActivity::class.java )
 
             startActivityForResult( myIntent, REQ_CODE_NICKNAME )
+
+        }
+
+        btnDial.setOnClickListener {
+
+//            1. 입력된 폰번 변수 저장
+
+            val inputPhoneNum = edtPhoneNum.text.toString()
+
+//            2. 안드로이드 기본 전화앱으로 이동
+
+//            2.1  어느 번호에? => Uri로 저장
+            val myUri = Uri.parse("tel:01051123237") // 띄어쓰기 끼어있으면 앱이 죽는다.
+
+//            2.2 Uri + DIAL => Intent로 화면 이동
+            val myIntent = Intent( Intent.ACTION_DIAL,  myUri )
+            startActivity(myIntent)
 
         }
 
