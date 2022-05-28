@@ -74,6 +74,19 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        btnSms.setOnClickListener {
+
+            val phoneNum = edtPhoneNum.text.toString()
+            val myUri = Uri.parse("smsto:${phoneNum}")
+            val myIntent = Intent( Intent.ACTION_SENDTO, myUri )
+
+//            문자 화면 (수신 입장) 에서 정해둔 이름표 sms_body 활용
+            myIntent.putExtra("sms_body",  "안녕하세요.")
+
+            startActivity(myIntent)
+
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
