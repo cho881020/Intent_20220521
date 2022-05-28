@@ -86,5 +86,11 @@
         android:layout_height="wrap_content"
         android:text="문자 보내기 (SENDTO)" />
 
+    <Button
+        android:id="@+id/btnNaverLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="네이버로 웹 링크 (VIEW)" />
+
 
 </LinearLayout>
